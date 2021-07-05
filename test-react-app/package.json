@@ -10,8 +10,8 @@
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^0.0.0-experimental-ed6c091fe-20210701",
+    "react-dom": "^0.0.0-experimental-ed6c091fe-20210701",
     "react-scripts": "4.0.3",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
