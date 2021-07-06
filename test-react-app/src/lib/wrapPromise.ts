@@ -14,14 +14,12 @@ export function wrapPromise<Result extends unknown>(promiseFunc: Promise<any>) {
     }
   );
 
-  return {
-    read() {
-      switch (status) {
-        case "pending": throw suspender;
-        case "error": throw error;
-        case "success": return result;
-        default: throw suspender;
-      }
+  return function () {
+    switch (status) {
+      case "pending": throw suspender;
+      case "error": throw error;
+      case "success": return result;
+      default: throw suspender;
     }
   }
 }
