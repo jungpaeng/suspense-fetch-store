@@ -1,31 +1,5 @@
 import React from 'react';
-
-function wrapPromise(promise: Promise<any>) {
-  let status = "pending";
-  let result: any;
-
-  const suspender = promise.then(
-    (r) => {
-      status = "success";
-      result = r;
-    },
-    (e) => {
-      status = "error";
-      result = e;
-    }
-  )
-
-  return {
-    read() {
-      if (status === "pending")
-        throw suspender;
-      if (status === "error")
-        throw result;
-
-      return result;
-    }
-  }
-}
+import { wrapPromise } from '../lib/wrapPromise';
 
 function fakeAPI() {
   return new Promise(resolve => setTimeout(() => {
